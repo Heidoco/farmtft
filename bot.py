@@ -83,13 +83,14 @@ while True:
             mouse.release(Button.left)
             render_se = pyautogui.locateOnScreen("render-se.png")
             pyautogui.moveTo(render_se)
-            while pyautogui.locateOnScreen("e.png"):
-                pyautogui.moveTo(render_se)
-                mouse.press(Button.left)
-                time.sleep(0.5)
-                mouse.release(Button.left)
-                lista_0 = []
-                print("SURRENDER")
+            time.sleep(1)
+            pyautogui.moveTo(pyautogui.locateOnScreen("e.png"))
+            mouse.press(Button.left)
+            time.sleep(0.5)
+            mouse.release(Button.left)
+            lista_0 = []
+            rodada = None
+            print("SURRENDER")
         print("5")
         
         #Comprar o campeão Nasus
