@@ -17,8 +17,10 @@ while True:
     if "League of Legends" in janela and "League of Legends (TM) Client" not in janela:
         
         #Procurar partida
-        if pyautogui.locateOnScreen("encontrar.png"):
-            pyautogui.moveTo(pyautogui.locateOnScreen("encontrar.png"))
+        encontrar = pyautogui.locateOnScreen("encontrar.png")
+        if encontrar:
+            print("pau")
+            pyautogui.moveTo(encontrar)
             mouse.press(Button.left)
             time.sleep(0.5)
             mouse.release(Button.left)
@@ -27,8 +29,9 @@ while True:
         print("1")
     
         #Aceitar partida
-        if pyautogui.locateOnScreen("aceitar.png"):
-            pyautogui.moveTo(pyautogui.locateOnScreen("aceitar.png"))
+        aceitar = pyautogui.locateOnScreen("aceitar.png")
+        if aceitar:
+            pyautogui.moveTo(aceitar)
             mouse.press(Button.left)
             time.sleep(0.5)
             mouse.release(Button.left)
@@ -37,8 +40,9 @@ while True:
         print("2")
         
         #Jogar novamente no fim da partida
-        if pyautogui.locateOnScreen("jogarnovamente.png"):
-            pyautogui.moveTo(pyautogui.locateOnScreen("jogarnovamente.png"))
+        jogar_novamente = pyautogui.locateOnScreen("jogarnovamente.png")
+        if jogar_novamente:
+            pyautogui.moveTo(jogar_novamente)
             mouse.press(Button.left)
             time.sleep(0.5)
             mouse.release(Button.left)
@@ -57,8 +61,9 @@ while True:
         lista_0 = list(pyautogui.locateAllOnScreen("4.png"))
         
         #Sair da partida em caso de eliminação
-        if pyautogui.locateOnScreen("sair.png"):
-            pyautogui.moveTo(pyautogui.locateOnScreen("sair.png"))
+        sair = pyautogui.locateOnScreen("sair.png")
+        if sair:
+            pyautogui.moveTo(sair)
             mouse.press(Button.left)
             time.sleep(0.5)
             mouse.release(Button.left)
@@ -66,8 +71,9 @@ while True:
         print("4")
 
 
-        #Sair da partida em caso de 4o lugar
-        while int(len(lista_0))>= 4 or pyautogui.locateOnScreen("4-3.png"):    
+        #Sair da partida em caso de 4o lugar ou demora
+        rodada = pyautogui.locateOnScreen("4-6.png")
+        while int(len(lista_0))>= 4 or rodada:    
             keyboard.press_and_release("esc")
             time.sleep(2)
             print("4 LUGAR")
@@ -75,9 +81,10 @@ while True:
             mouse.press(Button.left)
             time.sleep(0.5)
             mouse.release(Button.left)
-            pyautogui.moveTo(pyautogui.locateOnScreen("render-se.png"))
+            render_se = pyautogui.locateOnScreen("render-se.png")
+            pyautogui.moveTo(render_se)
             while pyautogui.locateOnScreen("e.png"):
-                pyautogui.moveTo(pyautogui.locateOnScreen("render-se.png"))
+                pyautogui.moveTo(render_se)
                 mouse.press(Button.left)
                 time.sleep(0.5)
                 mouse.release(Button.left)
@@ -86,8 +93,9 @@ while True:
         print("5")
         
         #Comprar o campeão Nasus
-        if pyautogui.locateOnScreen("nasus.png"):
-            pyautogui.moveTo(pyautogui.locateOnScreen("nasus.png"))
+        nasus = pyautogui.locateOnScreen("nasus.png")
+        if nasus:
+            pyautogui.moveTo(nasus)
             time.sleep(1)
             mouse.press(Button.left)
             time.sleep(0.5)
@@ -97,8 +105,10 @@ while True:
         print("6")
         
         #Comprar a campeã Fiora
-        if pyautogui.locateOnScreen("fiora.png"):
-            pyautogui.moveTo(pyautogui.locateOnScreen("fiora.png"))
+        fiora = pyautogui.locateOnScreen("fiora.png")
+        print(fiora)
+        if fiora:
+            pyautogui.moveTo(fiora)
             time.sleep(1)
             mouse.press(Button.left)
             time.sleep(0.5)
